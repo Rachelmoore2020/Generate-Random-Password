@@ -35,46 +35,101 @@
     // src="script.js"> Put the javascript inside its own file
 
          
-    var uppercase = ["A", BCDEFGHIJKLIMNOPQRSTUVWXYZ];
-    var lowercase = "abcdefghijklmnopqrstuvwxyz";
-    var numbers = "0123456789";
-    var symbols = "!@#$%^&*()+><{}"
+    var uppercase = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
+];
+    var lowercase = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z'
+];
+    var numbers = ["0123456789"];
+    var symbols = ["!@#$%^&*()+><{}"]
     var allowedChars = [];
     
     
         // start these prompts with a the generate onclick
 
-    var wantUppercase = prompt("Do you want uppercase letters?", "Enter yes or no");
-    var wantLowercase = prompt("Do you want lowercase letters?", "Enter yes or no");
-    var wantNumbers = prompt("Do you want numbers?", "Enter yes or no");
-    var wantSymbols = prompt("Do you want symbols?", "Enter yes or no");
+    //     document.querySelector('#bgnBtn').addEventListener('click', function() {
+    // var userAdjective = prompt("Please provide an Adjective");
+    // alert (userAdjective);
+generatePassword()
+function generatePassword () {
+    var wantUppercase = confirm("Do you want uppercase letters?");
+    var wantLowercase = confirm("Do you want lowercase letters?");
+    var wantNumbers = confirm("Do you want numbers?");
+    var wantSymbols = confirm("Do you want symbols?");
 
-    if (!wantUppercase) + (!wantLowecase) + (!wantNumbers) + (!symbols);
-    alert(You must choose at least one!);
-
-    // var wantUppercase = prompt("Do you want uppercase letters?", "Enter yes or no");
-    // var wantLowercase = prompt("Do you want lowercase letters?", "Enter yes or no");
-    // var wantNumbers = prompt("Do you want numbers?", "Enter yes or no");
-    // var wantSymbols = prompt("Do you want symbols?", "Enter yes or no");
-
-
+    if (!wantUppercase && !wantLowercase && !wantNumbers && !wantSymbols) {
+      alert("You must choose at least one!");
+      generatePassword ()
+    }
+    
 
     var passwordLength = prompt("how many characters do you want your password to be", "Enter a number between 8 and 128"); 
 
     if (wantUppercase) {
-        var allowedChars.push([uppercase]);
+        allowedChars=allowedChars.concat(uppercase);
     }
     if (wantLowercase) {
-        var allowedChars.push([lowercase]);
+      allowedChars=allowedChars.concat(lowercase);
     }
     if (wantNumbers) {
-        var allowedChars.push([numbers]);
+      allowedChars=allowedChars.concat(numbers);
     }
     if (wantSymbols) {
-        var allowedChars.push([symbols]);
+      allowedChars=allowedChars.concat(symbols);
     }
 
-
+  }
     // function generatePassword() {
 
     //     for(var i = 0; i < length; i++) {
