@@ -95,13 +95,7 @@
     var symbols = ["!@#$%^&*()+><{}"]
     var allowedChars = [];
     
-    
-        // start these prompts with a the generate onclick
-
-    //     document.querySelector('#bgnBtn').addEventListener('click', function() {
-    // var userAdjective = prompt("Please provide an Adjective");
-    // alert (userAdjective);
-generatePassword()
+// generatePassword()
 function generatePassword () {
     var wantUppercase = confirm("Do you want uppercase letters?");
     var wantLowercase = confirm("Do you want lowercase letters?");
@@ -118,26 +112,47 @@ function generatePassword () {
 
     if (wantUppercase) {
         allowedChars=allowedChars.concat(uppercase);
+        console.log(allowedChars);
     }
     if (wantLowercase) {
       allowedChars=allowedChars.concat(lowercase);
+      console.log(allowedChars);
     }
     if (wantNumbers) {
       allowedChars=allowedChars.concat(numbers);
+      console.log(allowedChars);
     }
     if (wantSymbols) {
       allowedChars=allowedChars.concat(symbols);
+      console.log(allowedChars);
     }
+    console.log(allowedChars);
 
-  }
+  
     // function generatePassword() {
+var password="";
+        for(var i = 0; i < passwordLength; i++) {
+            var random = Math.floor(Math.random() * allowedChars.length);
+            password += allowedChars[random];
 
-    //     for(var i = 0; i < length; i++) {
-    //         var random = Math.floor(Math.random() * allowed.length;
-    //         password += allowed[random];
+        }
+        console.log(password);
+        return password;
+  }
+  // Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-    //     }
-    //     return password;
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
     </script>
 
